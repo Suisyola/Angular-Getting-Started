@@ -5,7 +5,6 @@ import { ProductService } from './product-service';
 
 //@Component is a function, hence(), which takes in an object, hence {}
 @Component({
-  selector: 'pm-products',
   // ./ is used because the html is on the same directory as this file
   templateUrl: './product-list.component.html',
   // apply styles only to this component. Takes in array. Can add more styles using commas.
