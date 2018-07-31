@@ -47,7 +47,12 @@
                  [style.height.px] = 'imageheight'
                  />
           </td>
-          <td>{{ product.productName }}</td>
+          <td>
+            <!--Route to /products, passing in productId-->
+            <a [routerLink]="['/products', product.productId]">
+              {{ product.productName }}
+            </a>
+          </td>
           <!--Pipe for lowercase-->
           <td>{{ product.productCode | lowercase | convertToSpaces:'-'}}</td>
           <td>{{ product.releaseDate }}</td>
