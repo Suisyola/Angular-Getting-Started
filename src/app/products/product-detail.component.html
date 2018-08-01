@@ -2,6 +2,48 @@
   <div class='card-header'>
     {{pageTitle + ': ' + product.productName}}
   </div>
+  <div class='card-body'>
+    <div class='row'>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-4">Name:</div>
+          <div class="col-md-8">{{ product.productName }}</div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-4">Code:</div>
+          <div class="col-md-8">{{ product.productCode | lowercase | convertToSpaces:'-'}}</div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-4">Description:</div>
+          <div class="col-md-8">{{ product.description}}</div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-4">Availability:</div>
+          <div class="col-md-8">{{ product.releaseDate}}</div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-4">Price:</div>
+          <div class="col-md-8">{{ product.price | currency:'USD':'symbol':'1.2-2'}}</div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-4">5 Star Rating:</div>
+          <div class="col-md-8">
+            <pm-star [rating]='product.starRating'></pm-star>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img [src]='product.imageUrl'
+             [title]='product.productName'
+             [style.width.px]='imageWidth'
+             [style.height.px]='imageheight'/>
+      </div>
+    </div>
   <div class='card-footer'>
     <!--(click)='onBack()': Routing via a method-->
     <button class='btn btn-outline-secondary' (click)='onBack()' style='width: 80px'>
